@@ -4,30 +4,22 @@
   Source: https://medium.com/@howard24/a-look-at-the-moral-point-system-of-the-good-place-7858215fd9dc
   */
 
-import java.util.HashMap;
-import java.util.Map;
-// import java.util.Iterator;
-
 class Main {
 
   // Main method calls results on people 
   public static void main(String[] args) { 
     double arjunVal = arjunGandhisLife();
     double poojaVal = poojaGandhisLife();
-    double goodVal = goodPersonLife();
 
     String a = "Arjun Gandhi";
     String p = "Pooja Gandhi";
-    String g = "Good Person"; // a made up test case
     results(a, arjunVal); 
     results(p, poojaVal); 
-    results(g, goodVal); 
-    System.out.println();
 
     // Create parallel arrays of ppl names and moral values.
     // Then find the best person and output them.
-    String names[] = {a, p, g};
-    double values[] = {arjunVal, poojaVal, goodVal};
+    String names[] = {a, p};
+    double values[] = {arjunVal, poojaVal};
     findBestPerson(names, values);
   }
 
@@ -134,11 +126,13 @@ static void findBestPerson(String names[], double points[]) {
   // iterate over the scores
   // assume no two ppl have the same value
   for (int i = 1; i < points.length; i++) {
-    if (max < points[i]) max = points[i];
-    index = i;
+    if (max < points[i]) {
+      max = points[i];
+      index = i;
+    }
   }
 
-  System.out.println("Of these " + names.length + " people, " + names[index] + " had the most");
+  System.out.print("Of these " + names.length + " people, " + names[index] + " had the most");
   System.out.print("points with " + max + " points.");
 }
 
