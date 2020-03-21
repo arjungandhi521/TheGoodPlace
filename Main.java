@@ -132,7 +132,7 @@ static void findBestPerson(String names[], double points[]) {
     }
   }
 
-  System.out.print("Of these " + names.length + " people, " + names[index] + " had the most");
+  System.out.print("Of these " + names.length + " people, " + names[index] + " had the most ");
   System.out.print("points with " + max + " points.");
 }
 
