@@ -11,8 +11,11 @@ class Main {
     double arjunVal = arjunGandhisLife();
     double poojaVal = poojaGandhisLife();
 
+    // names of ppl call results on
     String a = "Arjun Gandhi";
     String p = "Pooja Gandhi";
+
+    // print results
     results(a, arjunVal); 
     results(p, poojaVal); 
 
