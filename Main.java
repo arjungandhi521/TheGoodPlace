@@ -10,20 +10,20 @@ class Main {
   public static void main(String[] args) { 
     double arjunVal = arjunGandhisLife();
     double poojaVal = poojaGandhisLife();
+    double personAVal = personALife();
+    double idealVal = goodPersonLife();
 
     // names of ppl call results on
     String a = "Arjun Gandhi";
     String p = "Pooja Gandhi";
-
+    String gp = "Ideal Human";
+    String pa = "Person A";
+    
     // print results
     results(a, arjunVal); 
     results(p, poojaVal); 
-
-    // Create parallel arrays of ppl names and moral values.
-    // Then find the best person and output them.
-    String names[] = {a, p};
-    double values[] = {arjunVal, poojaVal};
-    findBestPerson(names, values);
+    results(pa, personAVal);
+    results(gp, idealVal);
   }
 
   // Only those with a score greater than or equal to a million get into the Good Place
@@ -56,9 +56,28 @@ class Main {
     }
   }
 
+  static double personALife() {
+    double points = 0;
+    points += letSomeoneMergeInTrafficOnce() * 50.0;
+    points += holdDoorForSomeoneBehindYou() * 200.0;
+    points += selfMonitoredMouthSoundsWhileChewing() * 30.0;
+    points += broughtOwnBagsToGroceryStore();
+    points += ignoreTextDuringHumanConvo();
+    points += donatedBlood() * 3.0;
+    points += hugSadFriend() * 50.0;
+    points += stepCarefullyOverFlowerBed() * 20.0;
+    points += scratchElbow() * 250.0;
+    points += eatSandwich() * 200.0;
+    points += petLamb();
+    points += singToChild() * 5.0;
+    points += buyTrashyMag();
+    points += blowNoseOdd() * 2000.0;
+    return points;
+  }
+
   // Simulation of Pooja Gandhi's life
   static double poojaGandhisLife() {
-    int points = 0;
+    double points = 0;
     points += letSomeoneMergeInTrafficOnce() * 1000.0;
     points += holdDoorForSomeoneBehindYou() * 30000.0;
     points += broughtOwnBagsToGroceryStore(); 
@@ -120,24 +139,6 @@ class Main {
     points += petLamb();
     return points;
   }
-
-// find the best person
-static void findBestPerson(String names[], double points[]) {
-  double max = points[0];
-  int index = 0; // local of best person
-
-  // iterate over the scores
-  // assume no two ppl have the same value
-  for (int i = 1; i < points.length; i++) {
-    if (max < points[i]) {
-      max = points[i];
-      index = i;
-    }
-  }
-
-  System.out.print("Of these " + names.length + " people, " + names[index] + " had the most ");
-  System.out.print("points with " + max + " points.");
-}
 
 // Actions with a moral value below, 1 per function
 
