@@ -4,15 +4,31 @@
   Source: https://medium.com/@howard24/a-look-at-the-moral-point-system-of-the-good-place-7858215fd9dc
   */
 
+import java.util.HashMap;
+import java.util.Map;
+// import java.util.Iterator;
+
 class Main {
 
   // Main method calls results on people 
   public static void main(String[] args) { 
     double arjunVal = arjunGandhisLife();
     double poojaVal = poojaGandhisLife();
-    results("Arjun Gandhi", arjunVal); 
+    double goodVal = goodPersonLife();
+
+    String a = "Arjun Gandhi";
+    String p = "Pooja Gandhi";
+    String g = "Good Person"; // a made up test case
+    results(a, arjunVal); 
+    results(p, poojaVal); 
+    results(g, goodVal); 
     System.out.println();
-    results("Pooja Gandhi", poojaVal); 
+
+    // Create parallel arrays of ppl names and moral values.
+    // Then find the best person and output them.
+    String names[] = {a, p, g};
+    double values[] = {arjunVal, poojaVal, goodVal};
+    findBestPerson(names, values);
   }
 
   // Only those with a score greater than or equal to a million get into the Good Place
@@ -41,6 +57,7 @@ class Main {
       System.out.println(name + ", enjoy eternal suffering in the Bad Place!");
       double d = 1000000.0 - value; // calculate how off you were
       System.out.println("You were " + d + " points off from making it into the Good Place.");
+      System.out.println();
     }
   }
 
@@ -87,6 +104,43 @@ class Main {
     points += ruinOpera();
     return points;
   }
+
+  // an example of an ideal life to get into the good place
+  // not simulating anyone in particular, just to test good place code
+  static double goodPersonLife() {
+    double points = 0;
+    points += endSlavery();
+    points += letSomeoneMergeInTrafficOnce() * 50.0;
+    points += holdDoorForSomeoneBehindYou() * 30000.0;
+    points += installSolarPanelsOnHouse();
+    points += broughtOwnBagsToGroceryStore();
+    points += ignoreTextDuringHumanConvo()  * 100.0;
+    points += donatedBlood() * 10.0;
+    points += ateVegan();
+    points += helpMomWithPrinter() * 100.0;
+    points += rememberSistersBirthday() * 150.0;
+    points += hugSadFriend() * 5.0;
+    points += scratchElbow() * 100.0;
+    points += eatSandwich() * 5000.0; 
+    points += petLamb();
+    return points;
+  }
+
+// find the best person
+static void findBestPerson(String names[], double points[]) {
+  double max = points[0];
+  int index = 0; // local of best person
+
+  // iterate over the scores
+  // assume no two ppl have the same value
+  for (int i = 1; i < points.length; i++) {
+    if (max < points[i]) max = points[i];
+    index = i;
+  }
+
+  System.out.println("Of these " + names.length + " people, " + names[index] + " had the most");
+  System.out.print("points with " + max + " points.");
+}
 
 // Actions with a moral value below, 1 per function
 
