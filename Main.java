@@ -111,7 +111,7 @@ class Main {
     points += scratchElbow() * 100.0;
     points += eatSandwich() * 5000.0; 
     points += petLamb();
-    points += blowNoseOdd() * 100.0;
+    points += blowNoseOdd() * 131400.0;
     points += sayFB() * 200.0;
     points += sayBroCode() * 10.0;
     points += overstatPersonalConnectionsToTragedyThatHasNothingToDoWithYou() * 5.0;
