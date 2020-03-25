@@ -12,18 +12,50 @@ class Main {
     double poojaVal = poojaGandhisLife();
     double personAVal = personALife();
     double idealVal = goodPersonLife();
+    double pbVal = pbLife();
 
     // names of ppl call results on
     String a = "Arjun Gandhi";
     String p = "Pooja Gandhi";
     String gp = "Ideal Human";
     String pa = "Person A";
+    String pb = "Person B";
     
     // print results
     results(a, arjunVal); 
     results(p, poojaVal); 
     results(pa, personAVal);
+    results(pb, pbVal);
     results(gp, idealVal);
+  }
+
+  static double pbLife() {
+    double points = 0;
+    points += donateAbout16PercentOfLifeTimeIncomeAnonymously();
+    points += letSomeoneMergeInTrafficOnce();
+    points += neverDiscussVeganismUnpromted();
+    points += holdDoorForSomeoneBehindYou() * 10000.0;
+    points += installSolarPanelsOnHouse();
+    points += selfMonitoredMouthSoundsWhileChewing() * 10.0;
+    points += broughtOwnBagsToGroceryStore();
+    points += saveLittleHumanFromDriving();
+    points += ignoreTextDuringHumanConvo();
+    points += donatedBlood();
+    points += gaveOutFullSizeCandyBarsOnHalloween();
+    points += ateVegan();
+    points += gracefullyEndConvoOnWeather() * 10.0;
+    points += helpMomWithPrinter() * 10.0;
+    points += putSpiderOutside() * 3.0;
+    points += rememberSistersBirthday() * 80.0;
+    points += tolerateNYerFan();
+    points += hugSadFriend() * 50;
+    points += stepCarefullyOverFlowerBed() * 10.0;
+    points += scratchElbow() * 100.0;
+    points += eatSandwich() * 300.0;
+    points += petLamb() * 5;
+    points += blowNoseOdd();
+    points += overstatPersonalConnectionsToTragedyThatHasNothingToDoWithYou();
+    return points;
   }
 
   // Only those with a score greater than or equal to a million get into the Good Place
@@ -39,7 +71,7 @@ class Main {
       System.out.println("Wow! You must have been at least a little good. You were a better person than Doug Forcett!");
     }
     else if (you == 520000.0) System.out.println("You have equal value as person as Doug.");
-    else System.out.println("Doug had " + (520000.0 - you) + " more points than you.");
+    else System.out.println("Doug Forcett had " + (520000.0 - you) + " more points than you.");
   }
   
   // Prints where you are going and how you score relative to the minimum to get into the Good Place
